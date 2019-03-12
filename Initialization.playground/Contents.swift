@@ -75,3 +75,29 @@ class RecipeIngredient: Food {
         self.init(name: name, quantity: 1)
     }
 }
+
+struct Animal {
+    let species: String
+    init?(species: String) {
+        if species.isEmpty { return nil }
+        self.species = species
+    }
+}
+let someCreature = Animal(species: "Giraffe")
+let anonymousCreature = Animal(species: "")
+
+enum TemperatureUnit {
+    case kelvin, celsius, fahrenheit
+    init?(symbol: Character) {
+        switch symbol {
+        case "K":
+            self = .kelvin
+        case "C":
+            self = .celsius
+        case "F":
+            self = .fahrenheit
+        default:
+            return nil
+        }
+    }
+}
